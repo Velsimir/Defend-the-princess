@@ -5,6 +5,8 @@ using System.Collections;
 
 public class StateAttack : State
 {
+    private const string EnemyAttack = "Enemy_Attack";
+
     [SerializeField] private int _damage;
     [SerializeField]  private float _delay;
 
@@ -18,19 +20,19 @@ public class StateAttack : State
 
     private void Update()
     {
-        if (_lastAttackTime > _delay)
+        if (_lastAttackTime <= 0)
         {
-            Attack(MainHero);
+            Attack(Player);
             _lastAttackTime = _delay;
         }
 
         _lastAttackTime -= Time.deltaTime;
     }
 
-    private void Attack(MainHero mainHero)
+    private void Attack(Player player)
     {
-        _animator.Play("Attack");
-        mainHero.TakeDamage(_damage);
+        _animator.Play(EnemyAttack);
+        player.TakeDamage(_damage);
     }
 }
 

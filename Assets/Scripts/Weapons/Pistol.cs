@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : Weapons
+public class Pistol : Weapon
 {
     [SerializeField] private Transform _shootPosition;
 
     public override void Shoot(Transform shootPosition)
     {
-        Instantiate(_bullet,shootPosition.position,Quaternion.identity);
+        Instantiate(Bullet,shootPosition.position,Quaternion.identity);
     }
 }

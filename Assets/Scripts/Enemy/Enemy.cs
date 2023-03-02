@@ -7,10 +7,17 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _health;
     [SerializeField] private int _reward;
+    [SerializeField] private Player _targetPlayer;
 
-    [SerializeField] private MainHero _targetMainHero;
+    public event UnityAction<Enemy> Died;
 
-    private event UnityAction _died;
+    public int Reward => _reward;
+    public Player TargetPlayer => _targetPlayer;
+
+    public void Init(Player player)
+    {
+        _targetPlayer = player;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -18,13 +25,13 @@ public class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
-            _died?.Invoke();
+            Died?.Invoke(this);
             Destroy(gameObject);
         }
     }
 
-    public MainHero GetTargetMainHero()
+    public Player GetTargetPlayer()
     {
-        return _targetMainHero;
+        return _targetPlayer;
     }
 }

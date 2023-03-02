@@ -9,6 +9,6 @@ public class StateMove : State
     private void Update()
     {
         transform.position = Vector2.MoveTowards
-            (transform.position, MainHero.transform.position, _speed * Time.deltaTime);
+            (transform.position, Player.transform.position, _speed * Time.deltaTime);
     }
 }

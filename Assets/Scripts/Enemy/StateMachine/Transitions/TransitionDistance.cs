@@ -9,14 +9,12 @@ public class TransitionDistance : Transition
 
     private void Start()
     {
-        _transitionRange = Random.Range(-_rangeSpeard, _rangeSpeard);
+        _transitionRange += Random.Range(-_rangeSpeard, _rangeSpeard);
     }
 
     private void Update()
     {
-        if (Vector2.Distance(transform.position, MainHero.transform.position) < _transitionRange)
-        {
+        if (Vector2.Distance(transform.position, Player.transform.position) < _transitionRange)
             NeedTransit = true;
-        }
     }
 }

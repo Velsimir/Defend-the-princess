@@ -6,7 +6,7 @@ public class TransitionTargetDie : Transition
 {
     private void Update()
     {
-        if (MainHero == null)
+        if (Player == null)
             NeedTransit = true;
     }
 }

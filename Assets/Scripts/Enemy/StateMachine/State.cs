@@ -4,21 +4,21 @@ using System.Collections.Generic;
 
 public abstract class State : MonoBehaviour
 {
-    private List<Transition> _transitions;
+    [SerializeField] private List<Transition> _transitions;
 
-    protected MainHero MainHero { get; set; }
+    protected Player Player { get; set; }
 
-    public void Enter(MainHero mainHero)
+    public void Enter(Player player)
     {
         if (enabled == false)
         {
-            MainHero = mainHero;
+            Player = player;
             enabled = true;
 
             foreach (var transition in _transitions)
             {
                 transition.enabled = true;
-                transition.Init(mainHero); 
+                transition.Init(player); 
             }
         }
     }
@@ -40,7 +40,7 @@ public abstract class State : MonoBehaviour
     {
         foreach (var transit in _transitions)
         {
-            if (transit.NeedTransit)
+            if (transit.NeedTransit == true)
                 return transit.NextState;
         }
 

@@ -5,14 +5,14 @@ public abstract class Transition : MonoBehaviour
 {
     [SerializeField] private State _nextState;
 
-    protected MainHero MainHero { get; private set; }
+    protected Player Player { get; private set; }
 
     public State NextState => _nextState;
-    public bool NeedTransit { get; set; }
+    public bool NeedTransit { get; protected  set; }
 
-    public void Init(MainHero mainHero)
+    public void Init(Player player)
     {
-        MainHero = mainHero;
+        Player = player;
     }
 
     private void OnEnable()

@@ -6,17 +6,17 @@ using System.Collections;
 public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private State _firstState;
-    [SerializeField] private State _currentState;
 
-    private MainHero _mainHero;
+    private State _currentState;
+    private Player _player;
 
     public State CurrentState => _currentState;
 
     private void Start()
     {
-        _mainHero = GetComponent<Enemy>().GetTargetMainHero();
+        _player = GetComponent<Enemy>().GetTargetPlayer();
 
-        Reset(_firstState );
+        Reset(_firstState);
     }
 
     private void Update()
@@ -35,7 +35,7 @@ public class EnemyStateMachine : MonoBehaviour
         _currentState = startState;
 
         if (_currentState != null)
-            _currentState.Enter(_mainHero);
+            _currentState.Enter(_player);
     }
 
     private void Transsit(State nextState)
@@ -46,6 +46,6 @@ public class EnemyStateMachine : MonoBehaviour
         _currentState = nextState;
 
         if (_currentState != null)
-            _currentState.Enter(_mainHero );
+            _currentState.Enter(_player);
     } 
 }

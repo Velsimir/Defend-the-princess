@@ -1888,17 +1888,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3881756289473227266, guid: 8fc13be5ea55047bfaf7ee8c2a64f5e2, type: 3}
   m_PrefabInstance: {fileID: 3881756289873375864}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &406509691 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3881756289473227267, guid: 8fc13be5ea55047bfaf7ee8c2a64f5e2, type: 3}
-  m_PrefabInstance: {fileID: 3881756289873375864}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a1d9e39a8c74529909cbcd6b1159da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &414661634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,7 +2845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _weapons:
-  - {fileID: 406509691}
+  - {fileID: 1372616265}
   _shootPosition: {fileID: 1670164011}
 --- !u!95 &725395474
 Animator:
@@ -4502,6 +4491,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9202723809749321118, guid: a800825d615534fa696b49f26e2b1d51, type: 3}
   m_PrefabInstance: {fileID: 9202723808437547990}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1372616265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9202723809749321119, guid: a800825d615534fa696b49f26e2b1d51, type: 3}
+  m_PrefabInstance: {fileID: 9202723808437547990}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf97cfe8b959474a9cd466aa2bc6c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383649106
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   - Tamplate: {fileID: 8416057529494120500, guid: 0e1ca3acc71f649ca9afc403edd74f45, type: 3}
     Delay: 2
     Count: 3
-  - Tamplate: {fileID: 8416057529494120500, guid: 0e1ca3acc71f649ca9afc403edd74f45, type: 3}
+  - Tamplate: {fileID: 6290697138858007337, guid: 852b006f135934d398a08bae465cb602, type: 3}
     Delay: 0.5
     Count: 4
   _spawnPoint: {fileID: 1401748099}
